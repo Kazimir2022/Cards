@@ -12,6 +12,7 @@ class MyViewController : UIViewController {
   private func setupViews() {
     self.view = getRootView()  // корневая сцена
     self.view.addSubview( getRedView() ) // subView
+    self.view.addSubview( getGreenView() )
   }
   
   // создание корневого представления
@@ -28,6 +29,11 @@ class MyViewController : UIViewController {
     return view
   }
   
+  private func getGreenView() -> UIView {
+    let greenView = UIView(frame: CGRect(x: 100, y: 100, width: 180, height: 180))
+    greenView.backgroundColor = .green
+    return greenView
+  }
   
   
 }
