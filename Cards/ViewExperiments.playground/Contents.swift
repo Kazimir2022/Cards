@@ -16,6 +16,17 @@ class MyViewController : UIViewController {
         view.addSubview(label)
         self.view = view
     }
+  
+ // настройка представлений сцены
+  private func setupViews() {
+    self.view = getRootView()
+  }
+  
+  // создание корневого представления
+  private func getRootView() -> UIView {
+    let view = UIView()
+    view.backgroundColor = .gray
+    return view}
 }
 // Present the view controller in the Live View window
 PlaygroundPage.current.liveView = MyViewController()
