@@ -11,8 +11,9 @@ class MyViewController : UIViewController {
   // настройка представлений сцены
   private func setupViews() {
     self.view = getRootView()  // корневая сцена
-    self.view.addSubview( getRedView() ) // subView
-    self.view.addSubview( getGreenView() )
+    let redView = getRedView()
+    self.view.addSubview(redView) // subView
+    redView.addSubview(getGreenView())
   }
   
   // создание корневого представления
@@ -26,6 +27,7 @@ class MyViewController : UIViewController {
     let viewFrame = CGRect(x: 50, y: 50, width: 200, height: 200)
     let view = UIView(frame: viewFrame)
     view.backgroundColor = .red
+    view.clipsToBounds = true
     return view
   }
   
