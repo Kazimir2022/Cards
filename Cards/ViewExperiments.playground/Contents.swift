@@ -1,32 +1,40 @@
 //: A UIKit based Playground for presenting user interface
-  
+
 import UIKit
 import PlaygroundSupport
 
 class MyViewController : UIViewController {
-    override func loadView() {
-        let view = UIView()
-        view.backgroundColor = .white
-
-        let label = UILabel()
-        label.frame = CGRect(x: 150, y: 200, width: 200, height: 20)
-        label.text = "Hello World!"
-        label.textColor = .black
-        
-        view.addSubview(label)
-        self.view = view
-    }
+  override func loadView() {
+    setupViews()
+  }
   
- // настройка представлений сцены
+  // настройка представлений сцены
   private func setupViews() {
-    self.view = getRootView()
+    self.view = getRootView()  // корневая сцена
+    self.view.addSubview( getRedView() ) // subView
   }
   
   // создание корневого представления
   private func getRootView() -> UIView {
     let view = UIView()
     view.backgroundColor = .gray
-    return view}
+    return view
+  }
+  
+  private func getRedView() -> UIView {
+    let viewFrame = CGRect(x: 50, y: 50, width: 200, height: 200)
+    let view = UIView(frame: viewFrame)
+    view.backgroundColor = .red
+    return view
+  }
+  
+  
+  
 }
+
+
+
+
+
 // Present the view controller in the Live View window
 PlaygroundPage.current.liveView = MyViewController()
