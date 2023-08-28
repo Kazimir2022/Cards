@@ -24,6 +24,7 @@
 		FE452F3C2A9CA7B60053DEFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE452F3F2A9CA7B60053DEFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE452F412A9CA7B60053DEFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE452F472A9CA7E90053DEFC /* ViewExperiments.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ViewExperiments.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +64,7 @@
 				FE452F3C2A9CA7B60053DEFC /* Assets.xcassets */,
 				FE452F3E2A9CA7B60053DEFC /* LaunchScreen.storyboard */,
 				FE452F412A9CA7B60053DEFC /* Info.plist */,
+				FE452F472A9CA7E90053DEFC /* ViewExperiments.playground */,
 			);
 			path = Cards;
 			sourceTree = "<group>";
