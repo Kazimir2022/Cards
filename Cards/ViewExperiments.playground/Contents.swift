@@ -14,16 +14,24 @@ class MyViewController : UIViewController {
     let redView = getRedView()
     let greenView = getGreenView()
     let whiteView = getWhiteView()
+    let pinkView = getPinkView()
     set(view: greenView, toCenterOfView: redView)
-      //set(view: whiteView, toCenterOfView: greenView)
-    print(whiteView.center)
+    //set(view: whiteView, toCenterOfView: greenView)
     whiteView.center = greenView.center
-    
     
     
     self.view.addSubview(redView) // subView
     redView.addSubview(greenView)
     greenView.addSubview(whiteView)
+    self.view.addSubview(pinkView)
+    /*
+    dump(redView.backgroundColor) // UIColor
+    dump(redView.layer.backgroundColor) // CGColor
+    
+    redView.backgroundColor = UIColor.blue
+    redView.layer.backgroundColor = CGColor.init(red: 0, green: 0, blue: 1, alpha: 1)
+    */
+    
   }
   
   // создание корневого представления
@@ -53,6 +61,21 @@ class MyViewController : UIViewController {
     return whiteView
   }
   
+  private func getPinkView() -> UIView {
+    let pinkView = UIView(frame: CGRect(x: 50, y: 300, width: 100, height: 100))
+    pinkView.backgroundColor = .systemPink
+    pinkView.layer.borderWidth = 5
+    pinkView.layer.borderColor = UIColor.yellow.cgColor
+    pinkView.layer.cornerRadius = 10//  округлость углов
+    pinkView.layer.shadowOpacity = 0.95
+    pinkView.layer.shadowRadius = 20
+    pinkView.layer.shadowOffset = CGSize(width: 10, height: 20)
+    pinkView.layer.shadowColor = UIColor.white.cgColor
+    pinkView.layer.opacity = 0.7
+    pinkView.layer.backgroundColor = UIColor.black.cgColor
+    pinkView.layer.backgroundColor = UIColor.systemPink.cgColor
+    return pinkView
+  }
   
   
   
