@@ -12,8 +12,12 @@ class MyViewController : UIViewController {
   private func setupViews() {
     self.view = getRootView()  // корневая сцена
     let redView = getRedView()
+    let greenView = getGreenView()
+    set(view: greenView, toCenterOfView: redView)
+    
+    
     self.view.addSubview(redView) // subView
-    redView.addSubview(getGreenView())
+    redView.addSubview(greenView)
   }
   
   // создание корневого представления
@@ -32,11 +36,23 @@ class MyViewController : UIViewController {
   }
   
   private func getGreenView() -> UIView {
-    let greenView = UIView(frame: CGRect(x: 10, y: 10, width: 180, height: 180))
+    let greenView = UIView(frame: CGRect(x: 10, y: 10, width: 180, height: 120))
     greenView.backgroundColor = .green
     return greenView
   }
   
+private func set(view moveView: UIView, toCenterOfView baseView: UIView){
+  // размеры вложенного представления
+  let moveViewWidth = moveView.frame.width// зел.квадрат
+  let moveViewHeight = moveView.frame.height
+  // размеры родительского представления
+  let baseViewWidth = baseView.frame.width // красный.квадрат
+  let baseViewHeight = baseView.frame.height
+  // вычисление и изменение координат
+  let newXCoordinate = (baseViewWidth - moveViewWidth) / 2
+  let newYCoordinate = (baseViewHeight - moveViewHeight) / 2
+  moveView.frame.origin = CGPoint(x: newXCoordinate, y: newYCoordinate)
+}
   
 }
 
