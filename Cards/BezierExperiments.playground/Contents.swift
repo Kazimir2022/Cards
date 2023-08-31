@@ -26,6 +26,8 @@ class MyViewController : UIViewController {
     
     shapeLayer.fillColor = UIColor.green.cgColor
     shapeLayer.fillColor = UIColor.clear.cgColor
+    shapeLayer.lineDashPattern = [3, 20, 5]
+    shapeLayer.lineDashPhase = 2
     shapeLayer.lineCap = .round
     
     // 3
