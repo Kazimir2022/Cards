@@ -29,8 +29,8 @@ class MyViewController : UIViewController {
     //shapeLayer.lineDashPattern = [3, 20, 5]
   //  shapeLayer.lineDashPhase = 2
     shapeLayer.lineCap = .round
-    shapeLayer.strokeStart = 0.3
-    shapeLayer.strokeEnd = 0.7
+    //shapeLayer.strokeStart = 0.3
+    //shapeLayer.strokeEnd = 0.7
     
     // 3
     // создание фигуры
@@ -46,6 +46,8 @@ class MyViewController : UIViewController {
     path.addLine(to: CGPoint(x: 150, y: 50))
  // создание второй линии
     path.addLine(to: CGPoint(x: 150, y: 150))
+   // path.addLine(to: CGPoint(x: 50, y: 50))
+    path.close()
     return path
   }
 }
