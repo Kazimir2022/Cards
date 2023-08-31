@@ -31,7 +31,7 @@ class MyViewController : UIViewController {
     shapeLayer.lineCap = .round
     //shapeLayer.strokeStart = 0.3
     //shapeLayer.strokeEnd = 0.7
-    
+    shapeLayer.lineJoin = .round
     // 3
     // создание фигуры
     shapeLayer.path = getPath().cgPath
@@ -47,7 +47,9 @@ class MyViewController : UIViewController {
  // создание второй линии
     path.addLine(to: CGPoint(x: 150, y: 150))
    // path.addLine(to: CGPoint(x: 50, y: 50))
+    
     path.close()
+    
     return path
   }
 }
