@@ -67,12 +67,15 @@ class MyViewController : UIViewController {
     pinkView.layer.opacity = 0.7
     pinkView.layer.backgroundColor = UIColor.black.cgColor
     pinkView.layer.backgroundColor = UIColor.systemPink.cgColor
+    pinkView.transform = CGAffineTransform(rotationAngle: .pi/4)
+    print(pinkView.frame)
    
-    let layer = CALayer()    
+    let layer = CALayer()
     layer.backgroundColor = UIColor.black.cgColor
     layer.frame = CGRect(x: 10, y: 10, width: 20, height: 20)
     pinkView.layer.addSublayer(layer)
     layer.cornerRadius = 10
+    
     return pinkView
   }
   
