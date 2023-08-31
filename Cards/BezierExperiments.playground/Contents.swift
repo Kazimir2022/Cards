@@ -25,6 +25,8 @@ class MyViewController : UIViewController {
     shapeLayer.lineWidth = 5
     
     shapeLayer.fillColor = UIColor.green.cgColor
+    shapeLayer.fillColor = UIColor.clear.cgColor
+    shapeLayer.lineCap = .round
     
     // 3
     // создание фигуры
