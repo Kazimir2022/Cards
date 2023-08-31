@@ -86,16 +86,7 @@ class MyViewController : UIViewController {
   
   
   private func set(view moveView: UIView, toCenterOfView baseView: UIView){
-    // размеры вложенного представления
-    let moveViewWidth = moveView.frame.width// зел.квадрат
-    let moveViewHeight = moveView.frame.height
-    // размеры родительского представления
-    let baseViewWidth = baseView.bounds.width // красный.квадрат
-    let baseViewHeight = baseView.bounds.height
-    // вычисление и изменение координат
-    let newXCoordinate = (baseViewWidth - moveViewWidth) / 2
-    let newYCoordinate = (baseViewHeight - moveViewHeight) / 2
-    moveView.frame.origin = CGPoint(x: newXCoordinate, y: newYCoordinate)
+    moveView.center = CGPoint(x: baseView.bounds.midX, y: baseView.bounds.midY)
   }
   
 }
