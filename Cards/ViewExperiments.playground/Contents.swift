@@ -15,9 +15,13 @@ class MyViewController : UIViewController {
     let greenView = getGreenView()
     let whiteView = getWhiteView()
     let pinkView = getPinkView()
+    redView.transform = CGAffineTransform(rotationAngle: .pi/3)
+    
+    
+    
     set(view: greenView, toCenterOfView: redView)
-    //set(view: whiteView, toCenterOfView: greenView)
-    whiteView.center = greenView.center
+    set(view: whiteView, toCenterOfView: greenView)
+    
     
     
     self.view.addSubview(redView) // subView
@@ -68,7 +72,7 @@ class MyViewController : UIViewController {
     pinkView.layer.backgroundColor = UIColor.black.cgColor
     pinkView.layer.backgroundColor = UIColor.systemPink.cgColor
     
-    pinkView.transform = CGAffineTransform(rotationAngle: .pi/3).inverted()
+   
     let layer = CALayer()
     layer.backgroundColor = UIColor.black.cgColor
     layer.frame = CGRect(x: 10, y: 10, width: 20, height: 20)
@@ -86,8 +90,8 @@ class MyViewController : UIViewController {
     let moveViewWidth = moveView.frame.width// зел.квадрат
     let moveViewHeight = moveView.frame.height
     // размеры родительского представления
-    let baseViewWidth = baseView.frame.width // красный.квадрат
-    let baseViewHeight = baseView.frame.height
+    let baseViewWidth = baseView.bounds.width // красный.квадрат
+    let baseViewHeight = baseView.bounds.height
     // вычисление и изменение координат
     let newXCoordinate = (baseViewWidth - moveViewWidth) / 2
     let newYCoordinate = (baseViewHeight - moveViewHeight) / 2
