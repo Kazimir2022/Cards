@@ -24,13 +24,6 @@ class MyViewController : UIViewController {
     redView.addSubview(greenView)
     greenView.addSubview(whiteView)
     self.view.addSubview(pinkView)
-    /*
-    dump(redView.backgroundColor) // UIColor
-    dump(redView.layer.backgroundColor) // CGColor
-    
-    redView.backgroundColor = UIColor.blue
-    redView.layer.backgroundColor = CGColor.init(red: 0, green: 0, blue: 1, alpha: 1)
-    */
     
   }
   
@@ -74,24 +67,30 @@ class MyViewController : UIViewController {
     pinkView.layer.opacity = 0.7
     pinkView.layer.backgroundColor = UIColor.black.cgColor
     pinkView.layer.backgroundColor = UIColor.systemPink.cgColor
+   
+    let layer = CALayer()    
+    layer.backgroundColor = UIColor.black.cgColor
+    layer.frame = CGRect(x: 10, y: 10, width: 20, height: 20)
+    pinkView.layer.addSublayer(layer)
+    layer.cornerRadius = 10
     return pinkView
   }
   
   
   
   
-private func set(view moveView: UIView, toCenterOfView baseView: UIView){
-  // размеры вложенного представления
-  let moveViewWidth = moveView.frame.width// зел.квадрат
-  let moveViewHeight = moveView.frame.height
-  // размеры родительского представления
-  let baseViewWidth = baseView.frame.width // красный.квадрат
-  let baseViewHeight = baseView.frame.height
-  // вычисление и изменение координат
-  let newXCoordinate = (baseViewWidth - moveViewWidth) / 2
-  let newYCoordinate = (baseViewHeight - moveViewHeight) / 2
-  moveView.frame.origin = CGPoint(x: newXCoordinate, y: newYCoordinate)
-}
+  private func set(view moveView: UIView, toCenterOfView baseView: UIView){
+    // размеры вложенного представления
+    let moveViewWidth = moveView.frame.width// зел.квадрат
+    let moveViewHeight = moveView.frame.height
+    // размеры родительского представления
+    let baseViewWidth = baseView.frame.width // красный.квадрат
+    let baseViewHeight = baseView.frame.height
+    // вычисление и изменение координат
+    let newXCoordinate = (baseViewWidth - moveViewWidth) / 2
+    let newYCoordinate = (baseViewHeight - moveViewHeight) / 2
+    moveView.frame.origin = CGPoint(x: newXCoordinate, y: newYCoordinate)
+  }
   
 }
 
