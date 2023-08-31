@@ -13,11 +13,13 @@ class MyViewController : UIViewController {
     self.view = getRootView()  // корневая сцена
     let redView = getRedView()
     let greenView = getGreenView()
+    let whiteView = getWhiteView()
     set(view: greenView, toCenterOfView: redView)
-    
+    set(view: whiteView, toCenterOfView: greenView)
     
     self.view.addSubview(redView) // subView
     redView.addSubview(greenView)
+    greenView.addSubview(whiteView)
   }
   
   // создание корневого представления
@@ -36,10 +38,20 @@ class MyViewController : UIViewController {
   }
   
   private func getGreenView() -> UIView {
-    let greenView = UIView(frame: CGRect(x: 10, y: 10, width: 180, height: 120))
+    let greenView = UIView(frame: CGRect(x: 10, y: 10, width: 180, height: 180))
     greenView.backgroundColor = .green
     return greenView
   }
+  
+  private func getWhiteView() -> UIView {
+    let whiteView = UIView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+    whiteView.backgroundColor = .white
+    return whiteView
+  }
+  
+  
+  
+  
   
 private func set(view moveView: UIView, toCenterOfView baseView: UIView){
   // размеры вложенного представления
