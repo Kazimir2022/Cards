@@ -25,10 +25,12 @@ class MyViewController : UIViewController {
     shapeLayer.lineWidth = 5
     
     shapeLayer.fillColor = UIColor.green.cgColor
-    shapeLayer.fillColor = UIColor.clear.cgColor
-    shapeLayer.lineDashPattern = [3, 20, 5]
-    shapeLayer.lineDashPhase = 2
+   // shapeLayer.fillColor = UIColor.clear.cgColor
+    //shapeLayer.lineDashPattern = [3, 20, 5]
+  //  shapeLayer.lineDashPhase = 2
     shapeLayer.lineCap = .round
+    shapeLayer.strokeStart = 0.3
+    shapeLayer.strokeEnd = 0.7
     
     // 3
     // создание фигуры
