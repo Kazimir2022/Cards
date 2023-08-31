@@ -15,7 +15,11 @@ class MyViewController : UIViewController {
     let greenView = getGreenView()
     let whiteView = getWhiteView()
     set(view: greenView, toCenterOfView: redView)
-    set(view: whiteView, toCenterOfView: greenView)
+      //set(view: whiteView, toCenterOfView: greenView)
+    print(whiteView.center)
+    whiteView.center = greenView.center
+    
+    
     
     self.view.addSubview(redView) // subView
     redView.addSubview(greenView)
