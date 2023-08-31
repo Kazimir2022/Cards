@@ -32,7 +32,7 @@ class MyViewController : UIViewController {
   }
   
   private func getGreenView() -> UIView {
-    let greenView = UIView(frame: CGRect(x: 100, y: 100, width: 180, height: 180))
+    let greenView = UIView(frame: CGRect(x: 10, y: 10, width: 180, height: 180))
     greenView.backgroundColor = .green
     return greenView
   }
