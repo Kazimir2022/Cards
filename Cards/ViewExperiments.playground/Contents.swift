@@ -68,7 +68,7 @@ class MyViewController : UIViewController {
     pinkView.layer.backgroundColor = UIColor.black.cgColor
     pinkView.layer.backgroundColor = UIColor.systemPink.cgColor
     
-    pinkView.transform = CGAffineTransform(translationX: 100, y: 5)
+    pinkView.transform = CGAffineTransform(rotationAngle: .pi/3).scaledBy(x: 2, y: 0.8).translatedBy(x: 50, y: 50)
    
     let layer = CALayer()
     layer.backgroundColor = UIColor.black.cgColor
