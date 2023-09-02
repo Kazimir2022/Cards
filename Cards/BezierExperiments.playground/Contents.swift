@@ -25,9 +25,9 @@ class MyViewController : UIViewController {
     shapeLayer.lineWidth = 5
     
     shapeLayer.fillColor = UIColor.green.cgColor
-   // shapeLayer.fillColor = UIColor.clear.cgColor
+    // shapeLayer.fillColor = UIColor.clear.cgColor
     //shapeLayer.lineDashPattern = [3, 20, 5]
-  //  shapeLayer.lineDashPhase = 2
+    //  shapeLayer.lineDashPhase = 2
     shapeLayer.lineCap = .round
     //shapeLayer.strokeStart = 0.3
     //shapeLayer.strokeEnd = 0.7
@@ -39,14 +39,14 @@ class MyViewController : UIViewController {
   
   private func getPath() -> UIBezierPath {
     // 1
-    let path = UIBezierPath()
+    var path = UIBezierPath()
     // 2
     path.move(to: CGPoint(x: 50, y: 50))
     // 3
     path.addLine(to: CGPoint(x: 150, y: 50))
- // создание второй линии
+    // создание второй линии
     path.addLine(to: CGPoint(x: 150, y: 150))
-   // path.addLine(to: CGPoint(x: 50, y: 50))
+    // path.addLine(to: CGPoint(x: 50, y: 50))
     
     path.close()
     
@@ -55,6 +55,9 @@ class MyViewController : UIViewController {
     path.addLine(to: CGPoint(x: 150, y: 170))
     path.addLine(to: CGPoint(x: 50, y: 170))
     path.close()
+    
+    let rect = CGRect(x: 10, y: 10, width: 200, height: 100)
+    path = UIBezierPath(rect: rect)
     return path
   }
 }
