@@ -57,7 +57,7 @@ class MyViewController : UIViewController {
     path.close()
     
     let rect = CGRect(x: 10, y: 10, width: 200, height: 100)
-    path = UIBezierPath(rect: rect)
+    path = UIBezierPath(roundedRect: rect, cornerRadius: 30)
     return path
   }
 }
