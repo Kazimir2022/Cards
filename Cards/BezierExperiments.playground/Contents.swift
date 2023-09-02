@@ -38,8 +38,8 @@ class MyViewController : UIViewController {
   }
   
   private func getPath() -> UIBezierPath {
-    let centerPoint = CGPoint(x: 200, y: 200)
-    let path = UIBezierPath(arcCenter: centerPoint,                                radius: 150,                                startAngle: .pi/5,                                endAngle: .pi,                                clockwise: true)
+    let rect = CGRect(x: 50, y: 50, width: 200, height: 100)
+    let path = UIBezierPath(ovalIn: rect)
     return path
   }
 }
